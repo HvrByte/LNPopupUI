@@ -123,7 +123,7 @@ struct PlayerView: View {
 				.edgesIgnoringSafeArea(.all)
 			}())
 		}
-		.popupTitle(song.title)
+    .popupTitle(song.title, subtitle: song.subtitle)
 		.popupImage(Image(song.imageName).resizable())
 		.popupProgress(playbackProgress)
 		.popupBarItems({

@@ -140,6 +140,13 @@ struct MusicView: View {
 			}
 		}
 		.popupBarProgressViewStyle(.top)
+    .popupBarTitleTextAttributes(AttributeContainer()
+      .font(Font.custom("Chalkduster", size: 14, relativeTo: .headline))
+      .foregroundColor(.red))
+    .popupBarSubtitleTextAttributes(AttributeContainer()
+      .font(.custom("Chalkduster", size: 12, relativeTo: .subheadline))
+      .foregroundColor(.green))
+    .popupBarMarqueeScrollEnabled(true, coordinateAnimations: true)
 		.font(nil)
 	}
 }
