@@ -140,7 +140,19 @@ struct MusicView: View {
 			}
 		}
 		.popupBarProgressViewStyle(.top)
-		.font(nil)
+    .popupBarInheritsAppearanceFromDockingView(false)
+    .popupBarCustomizer { popupBar in
+      let paragraphStyle = NSMutableParagraphStyle()
+      paragraphStyle.alignment = .right
+      paragraphStyle.lineBreakMode = .byTruncatingTail
+
+      popupBar.standardAppearance.backgroundEffect = UIBlurEffect(style: .dark)
+      popupBar.standardAppearance.titleTextAttributes = [ .paragraphStyle: paragraphStyle, .font: UIFont(name: "Chalkduster", size: 14)!, .foregroundColor: UIColor.yellow ]
+      popupBar.standardAppearance.subtitleTextAttributes = [ .paragraphStyle: paragraphStyle, .font: UIFont(name: "Chalkduster", size: 12)!, .foregroundColor: UIColor.green ]
+
+      popupBar.tintColor = .yellow
+    }
+    .font(nil)
 	}
 }
 
